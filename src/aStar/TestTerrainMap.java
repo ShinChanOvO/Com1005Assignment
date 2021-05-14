@@ -1,3 +1,4 @@
+package aStar;
 
 /**
   * TestTerrainMap.java

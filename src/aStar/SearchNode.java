@@ -1,3 +1,4 @@
+package aStar;
 /**
  *	Node in a state-space search
  *   variable costs case
