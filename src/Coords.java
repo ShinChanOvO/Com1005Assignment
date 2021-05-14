@@ -1,4 +1,4 @@
-package aStar;
+
 /**
  * Coords.java
  *

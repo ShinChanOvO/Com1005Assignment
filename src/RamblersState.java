@@ -1,4 +1,4 @@
-package aStar;
+
 import java.util.ArrayList;
 
 public class RamblersState extends SearchState {

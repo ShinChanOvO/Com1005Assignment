@@ -1,15 +1,4 @@
-package aStar;
-/**
- *	Node in a state-space search
- *   variable costs case
- *   Must implement goalP, getSuccessors, sameState, node_toString
- *   node has local cost & global cost now
- *   This version for A*
- *   Mods indicated by //A*
- *   Phil Green 2013 version
- * Heidi Christensen (heidi.christensen@sheffield.ac.uk) 2021 version
- *  
-*/
+
 
 import java.util.*;
 

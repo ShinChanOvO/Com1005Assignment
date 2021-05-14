@@ -1,14 +1,4 @@
-package aStar;
-/**
-*	State in a state-space search
-*	abstract class
-*   must implement goalPredicate, getSuccessors, sameState, toString
-*   variable cost version - has localCost variable
-*   A* version - has estRemCost
-*   changes indicated by //A*-
-*   Phil Green 2013 version
-*   Heidi Christensen (heidi.christensen@sheffield.ac.uk) 2021 version
-*/
+
 
 import java.util.*;
 
