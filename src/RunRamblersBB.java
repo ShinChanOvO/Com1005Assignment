@@ -9,8 +9,8 @@ public class RunRamblersBB {
 		   TerrainMap map1 = new TerrainMap("tmc.pgm");
 		    
 
-		   RamblersSearch searcher = new RamblersSearch(map1, new Coords(10,5));
-		    SearchState initState = (SearchState) new RamblersState(new Coords(5,5), 0, 0);
+		   RamblersSearch searcher = new RamblersSearch(map1, new Coords(0,0));
+		   SearchState initState = (SearchState) new RamblersState(new Coords(12,14), 0, 0);
 
 		    // change from search1 - specify strategy
 
@@ -22,6 +22,10 @@ public class RunRamblersBB {
 
 		    String res_bb = searcher.runSearch(initState, "branchAndBound");
 		    System.out.println(res_bb);
+		    
+		    System.out.println("-----------------end of BNB search---------------- ");
+		
+		    
 	}
 
 }

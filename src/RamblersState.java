@@ -31,7 +31,7 @@ public class RamblersState extends SearchState {
 	    int maxY=map.getDepth();
 	    int maxX=map.getWidth();
 	    //check if the coordinate starts from 0 or start from one of the end
-	   if (y!=0 && x!=0 && y!= maxY &&x!=maxX) {
+	   if (y!=0 && x!=0 && y!= maxY-1 &&x!=maxX-1) {
 		   // do the y move 
 		   for (int i=-1;i<3;i=i+2) {
 		   if(usingArray[y][x] <= usingArray[y+i][x] ){
@@ -55,7 +55,7 @@ public class RamblersState extends SearchState {
 	     
 	    }
 	   // if x=0 and Y in a normal case
-	   else if (y!=0 && y!= maxY && x==0) {
+	   else if (y!=0 && y!= maxY-1 && x==0) {
 		// do the y move 
 		   for (int i=-1;i<3;i=i+2) {
 		   if(usingArray[y][x] <= usingArray[y+i][x] ){
@@ -78,7 +78,7 @@ public class RamblersState extends SearchState {
 		   }
 	   }
 	   //if x =max and Y in a normal case
-	   else if(x==maxX && y!=0 && y!=maxY) {
+	   else if(x==maxX-1 && y!=0 && y!=maxY-1) {
 		   //do the x move only to the left side
 		   if(usingArray[y][x] <= usingArray[y][x-1] ){
 			   int cost=1;
@@ -101,7 +101,7 @@ public class RamblersState extends SearchState {
 	   }
 	   }
 	   //if y=0 and x in a normal case
-	   else if(x!=0 && x!= maxX && y==0) {
+	   else if(x!=0 && x!= maxX-1 && y==0) {
 		// do the x move 
 		   for (int i=-1;i<3;i=i+2) {
 		   if(usingArray[y][x] <= usingArray[y][x+i] ){
@@ -139,7 +139,6 @@ public class RamblersState extends SearchState {
 	   
 	// do the x move 
 	   for (int i=-1;i<3;i=i+2) {
-		   System.out.println("x的数值是"+x);
 	   if(usingArray[y][x] <= usingArray[y][x+i] ){
 			   int cost=1;
 			   returnArray.add((SearchState) new RamblersState(new Coords(y,x+i), cost,0));
@@ -153,6 +152,7 @@ public class RamblersState extends SearchState {
 	   
 	   //if y=max and x=max
 	   //do the y move only to the down side
+	   else if(y==maxY-1 && x==maxX-1) {
 	   if(usingArray[y][x] <= usingArray[y-1][x] ){
 		   int cost=1;
 		   returnArray.add((SearchState) new RamblersState(new Coords(y-1,x), cost,0));
@@ -170,7 +170,7 @@ public class RamblersState extends SearchState {
 		   int cost=1+Math.abs(usingArray[y][x]-usingArray[y][x-1]);
 		   returnArray.add((SearchState) new RamblersState(new Coords(y,x-1), cost,0));
    		} 
-		   
+	   }  
 	    return returnArray;
 	  
 	   }
