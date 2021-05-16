@@ -1,29 +1,30 @@
-
-
-
+import java.util.Scanner;
 
 public class RunRamblersBB {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		   TerrainMap map1 = new TerrainMap("diablo.pgm");
-		    
-
-		   RamblersSearch searcher = new RamblersSearch(map1, new Coords(1,1));
-		   SearchState initState = (SearchState) new RamblersState(new Coords(43,50), 0, 0);
-
-		    // change from search1 - specify strategy
-
-		    // System.out.println(res_df);
-		    //String res_bf = searcher.runSearch(initState, "depthFirst");
-		    //System.out.println(res_bf);
-		    // String res_bb = searcher.runSearch(initState, "branchAndBound");
-		    // System.out.println(res_bb);
-
-		    String res_bb = searcher.runSearch(initState, "branchAndBound");
-		    System.out.println(res_bb);
-		    
-		    System.out.println("-----------------end of BNB search---------------- ");
+		   System.out.println("you are using branchAndBound search now");
+		   Scanner reader = new Scanner(System.in);  // Reading from System.in
+		   //read the input
+		   System.out.println("Enter the y value of the start point:");
+		   int startY = reader.nextInt();
+		   System.out.println("Enter the x value of the start point:");
+		   int startX = reader.nextInt();
+		   System.out.println("Enter the y value of the goal point:");
+		   int goalY = reader.nextInt(); 
+		   System.out.println("Enter the x value of the goal point:");
+		   int goalX = reader.nextInt();
+		   Coords start=new Coords(startY,startX);
+		   Coords goal=new Coords(goalY,goalX);
+		   reader.close();
+		   //run the search
+		   RamblersSearch searcher = new RamblersSearch(map1, goal);
+		   SearchState initState = (SearchState) new RamblersState(start, 0, 0);
+		   String res_bb = searcher.runSearch(initState, "branchAndBound");
+		   System.out.println(res_bb); 
+		   System.out.println("-----------------end of BNB search---------------- ");
 		
 		    
 	}
