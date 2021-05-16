@@ -6,11 +6,11 @@ public class RunRamblersBB {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		   TerrainMap map1 = new TerrainMap("tmc.pgm");
+		   TerrainMap map1 = new TerrainMap("diablo.pgm");
 		    
 
-		   RamblersSearch searcher = new RamblersSearch(map1, new Coords(0,0));
-		   SearchState initState = (SearchState) new RamblersState(new Coords(12,14), 0, 0);
+		   RamblersSearch searcher = new RamblersSearch(map1, new Coords(1,1));
+		   SearchState initState = (SearchState) new RamblersState(new Coords(43,50), 0, 0);
 
 		    // change from search1 - specify strategy
 
